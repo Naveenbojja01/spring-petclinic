@@ -16,7 +16,7 @@ pipeline {
                     withSonarQubeEnv('SONAR_QUBE') {
                         sh """mvn clean verify sonar:sonar \
                               -Dsonar.projectkey=naveenbojja01 \
-                              -Dsonar.organization=naveenbojja01 \
+                              -Dsonar.organization=Naveenbojja01 \
                               -Dsonar.host.url=https://sonarcloud.io/ \
                               -Dsonar.login=SPC_SONAR"""
                     }
