@@ -19,6 +19,8 @@ pipeline {
                               -Dsonar.organization=naveenbojja01 \
                               -Dsonar.host.url=https://sonarcloud.io/ \
                               -Dsonar.login=$SONAR_TOKEN"""
+
+                              
                     }
                 }
             }
