@@ -12,13 +12,13 @@ pipeline {
         }
         stage('scan') {
             steps {
-                withCredentials([string(credentialsId: 'SONAR_ID', variable: 'SPC_SONAR')]) {
+                withCredentials([string(credentialsId: 'SONAR_ID', variable: 'SONAR_TOKEN')]) {
                     withSonarQubeEnv('SONAR_QUBE') {
                         sh """mvn clean verify sonar:sonar \
-                              -Dsonar.projectkey=naveenbojja01 \
+                              -Dsonar.projectkey=Naveenbojja01_spring-petclinic \
                               -Dsonar.organization=Naveenbojja01 \
                               -Dsonar.host.url=https://sonarcloud.io/ \
-                              -Dsonar.login=SPC_SONAR"""
+                              -Dsonar.login=$SONAR_TOKEN"""
                     }
                 }
             }
