@@ -18,9 +18,9 @@ pipeline {
                               -Dsonar.projectkey=Naveenbojja01_spring-petclinic \
                               -Dsonar.organization=naveenbojja01 \
                               -Dsonar.host.url=https://sonarcloud.io/ \
-                              -Dsonar.login=$SONAR_TOKEN"""
+                              -Dsonar.login=SONAR_TOKEN"""
 
-                              
+
                     }
                 }
             }
