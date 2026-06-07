@@ -13,7 +13,7 @@ pipeline {
         stage('scan') {
             steps {
                 withCredentials([string(credentialsId: 'SONAR_ID', variable: 'SPC_SONAR')]) {
-                    withSonarQubeEnv('SONAR') {
+                    withSonarQubeEnv('SONAR_QUBE') {
                         sh """mvn clean verify sonar:sonar \
                               -Dsonar.projectkey=naveenbojja01 \
                               -Dsonar.organization=Naveenbojja01 \
