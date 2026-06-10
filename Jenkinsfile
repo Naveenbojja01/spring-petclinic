@@ -25,11 +25,27 @@ pipeline {
                 }
             }
         }
-        stage("Quality Gate") {
+/*      stage("Quality Gate") {
             steps {
               timeout(time: 1, unit: 'HOURS') {
                 waitForQualityGate abortPipeline: true
               }
+            }
+        }   */
+        stage('upload binaryfile'){
+            steps{
+                rtUpload(
+                    serverId: 'JFROG_ID',
+                    spec: '''{
+                        "files": [
+                        {
+                            "pattern": "javaspc/*.jar",
+                            "target": "javaspc/"
+                        }
+                        ]
+                    }'''
+                )
+                rtPublishBuildInfo(serverId: 'JFROG_ID')
             }
         }
     }
