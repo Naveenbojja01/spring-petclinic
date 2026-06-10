@@ -39,7 +39,7 @@ pipeline {
                     spec: '''{
                         "files": [
                         {
-                            "pattern": "javaspc/*.jar",
+                            "pattern": "target/*.jar",
                             "target": "javaspc/"
                         }
                         ]
